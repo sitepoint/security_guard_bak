@@ -30,7 +30,7 @@ Returns a list of the IPs from given country and IP dictionaries. Useful for aud
 
 ```ruby
 country_ips = SecurityGuard::CountryIps.new
-country_ips.countries = ['Australia', 'United States']
+country_ips.countries = ['Australia', 'United Kingdom']
 country_ips.ips = ['4.4.4.4', '8.8.8.8', '203.206.0.1']
 country_ips.result # => ['203.206.0.1']
 ```
