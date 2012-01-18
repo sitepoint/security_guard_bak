@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'clamp'
+require 'awesome_print'
+$:.unshift File.dirname(__FILE__) + '/../lib'
+require 'security_guard'
+
+module SecurityGuard
+  class CountryIpsCommand < Clamp::Command
+    parameter 'ip_addresses_path', 'path to a line-delimited file of IP addresses'
+    parameter 'countries_path', 'path to a line-delimited file of countries'
+    parameter '[output_path]', 'output the results in a text file'
+
+    def execute
+      country_ips = SecurityGuard::CountryIps.new
+
+      country_ips.ips_from_file       = ip_addresses_path
+      country_ips.countries_from_file = countries_path
+
+      if output_path
+        MainCommand.output_result(country_ips.result, output_path)
+      else
+        ap country_ips.result
+      end
+    end
+  end
+
+  class MainCommand < Clamp::Command
+    def self.output_result(result, output_path)
+      `echo #{result} > #{output_path}`
+      ap "Results published to '#{output_path}'."
+    end
+
+    subcommand 'country_ips',
+               'Returns a list of the IPs from given country and IP dictionaries.',
+               SecurityGuard::CountryIpsCommand
+  end
+end
+
+SecurityGuard::MainCommand.run

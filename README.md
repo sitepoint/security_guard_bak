@@ -18,6 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
+### Executable
+
+There is an `sguard` command if you intend to use security_guard as a command line tool. Please refer to the help option for its usage.
+
+    sguard -h
+
 ### Country IPs
 
 Returns a list of the IPs from given country and IP dictionaries. Useful for auditing IPs from higher risk nations.

@@ -15,6 +15,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = SecurityGuard::VERSION
 
+  gem.add_dependency 'clamp'
+  gem.add_dependency 'awesome_print'
   gem.add_dependency 'geoip'
   gem.add_development_dependency 'simplecov'
 end
