@@ -1,6 +1,7 @@
 require 'simplecov'
 SimpleCov.start
 
+require 'turn'
 require 'minitest/autorun'
 require 'minitest/spec'
 
