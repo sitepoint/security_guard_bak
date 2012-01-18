@@ -42,6 +42,18 @@ country_ips.countries_from_file = '/path/to/the/file'
 country_ips.ips_from_file = '/path/to/the/file'
 ```
 
+## Changelog
+
+### v0.0.2 [2012-01-19]
+
+- Added IP address sanity check
+- Coloured test output
+- Added changelog
+
+### v0.0.1 [2012-01-18]
+
+- First release, implemented SecurityGuard::CountryIps and `bin/sguard`
+
 ## Contributing
 
 1. Fork it
