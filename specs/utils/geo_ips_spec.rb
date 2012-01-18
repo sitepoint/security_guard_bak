@@ -14,6 +14,16 @@ describe SecurityGuard::Utils::GeoIps do
       @geoip.ip_address = '8.8.8.8'
       @geoip.ip_address.must_equal '8.8.8.8'
     end
+
+    it 'sanitises the (valid) ip address' do
+      @geoip.ip_address = 'a8.8.8.8, '
+      @geoip.ip_address.must_equal '8.8.8.8'
+    end
+
+    it 'sanitises the (invalid) ip address' do
+      @geoip.ip_address = 'abc'
+      @geoip.ip_address.must_equal nil
+    end
   end
 
   describe 'initialise with an ip' do
