@@ -6,7 +6,7 @@ module SecurityGuard
       end
 
       def self.to_array(line_delimited_file)
-        File.readlines(line_delimited_file).map{ |line| line.sub("\n", '') }
+        File.readlines(line_delimited_file).map{ |line| line.chomp }
       end
     end
   end
