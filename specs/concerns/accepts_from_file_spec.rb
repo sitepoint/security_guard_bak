@@ -1,11 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 class TestA
-  include SecurityGuard::Utils::AcceptsFromFile
+  include SecurityGuard::Concerns::AcceptsFromFile
   accepts_from_file :test_attribute
 end
 
-describe SecurityGuard::Utils::AcceptsFromFile do
+describe SecurityGuard::Concerns::AcceptsFromFile do
   before do
     @test = TestA.new
   end

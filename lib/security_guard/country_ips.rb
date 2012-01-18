@@ -1,6 +1,6 @@
 module SecurityGuard
   class CountryIps
-    include Utils::AcceptsFromFile
+    include Concerns::AcceptsFromFile
 
     accepts_from_file :countries, :ips
 

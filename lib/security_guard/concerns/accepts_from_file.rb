@@ -1,5 +1,5 @@
 module SecurityGuard
-  module Utils
+  module Concerns
     module AcceptsFromFile
       def self.included(klass)
         klass.extend ClassMethods

@@ -1,5 +1,5 @@
 require 'security_guard/version'
 require 'security_guard/utils/files'
-require 'security_guard/utils/accepts_from_file'
 require 'security_guard/utils/geo_ips'
+require 'security_guard/concerns/accepts_from_file'
 require 'security_guard/country_ips'
