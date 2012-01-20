@@ -36,7 +36,7 @@ country_ips.ips = ['4.4.4.4', '8.8.8.8', '203.206.0.1']
 # the above is equivalent to:
 
 country_ips = SecurityGuard::CountryIps.new(
-  :countries => ['Australia', 'United Kingdom']
+  :countries => ['Australia', 'United Kingdom'],
   :ips       => ['4.4.4.4', '8.8.8.8', '203.206.0.1']
 )
 ```
