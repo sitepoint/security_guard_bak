@@ -61,7 +61,7 @@ country_ips.ips_from_file = '/path/to/the/file'
 
 ## Changelog
 
-### master
+### v0.0.3 [2012-01-20]
 
 - Added Concerns::Initializable
 
