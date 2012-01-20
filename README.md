@@ -24,6 +24,23 @@ There is an `sguard` command if you intend to use security_guard as a command li
 
     sguard -h
 
+### Tips
+
+You can pass in setters during initialisation, for example:
+
+```ruby
+country_ips = SecurityGuard::CountryIps.new
+country_ips.countries = ['Australia', 'United Kingdom']
+country_ips.ips = ['4.4.4.4', '8.8.8.8', '203.206.0.1']
+
+# the above is equivalent to:
+
+country_ips = SecurityGuard::CountryIps.new(
+  :countries => ['Australia', 'United Kingdom']
+  :ips       => ['4.4.4.4', '8.8.8.8', '203.206.0.1']
+)
+```
+
 ### Country IPs
 
 Returns a list of the IPs from given country and IP dictionaries. Useful for auditing IPs from higher risk nations.
@@ -43,6 +60,10 @@ country_ips.ips_from_file = '/path/to/the/file'
 ```
 
 ## Changelog
+
+### master
+
+- Added Concerns::Initializable
 
 ### v0.0.2 [2012-01-19]
 
