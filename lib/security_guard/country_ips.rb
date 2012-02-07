@@ -1,11 +1,14 @@
 module SecurityGuard
   class CountryIps
     include Concerns::AcceptsFromFile
+    include Concerns::Initializable
 
     accepts_from_file :countries, :ips
+    initializable     :countries, :ips
 
-    def initialize
+    def initialize(args = nil)
       @geoip ||= Utils::GeoIps.new(Utils::Files.load('GeoIP.dat'))
+      initializable_attrs args
     end
 
     def result

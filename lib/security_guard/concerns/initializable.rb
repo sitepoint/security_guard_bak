@@ -5,10 +5,10 @@ module SecurityGuard
         klass.extend ClassMethods
       end
 
-      def initializable_attrs(attributes)
+      def initializable_attrs(attributes = nil)
         attributes.each do |name, value|
           self.send "#{name}=", value
-        end
+        end if attributes
       end
 
       module ClassMethods
