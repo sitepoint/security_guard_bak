@@ -62,7 +62,7 @@ country_ips.ips_from_file = '/path/to/the/file'
 
 ### Deduplication
 
-Deduplicates content contained within a list of files. Useful for deduplicating email newsletter subscription lists.
+Deduplicates line-delimited content contained within a list of files. Useful for deduplicating email newsletter subscription lists.
 
 ```ruby
 SecurityGuard::Deduplication.new(
