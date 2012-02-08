@@ -75,12 +75,12 @@ SecurityGuard::Deduplication.new(
 
 ### v0.0.4 [2012-02-08]
 
-- Fixed Concerns::Initializable for CountryIps
-- Added Deduplication
+- Fixed `Concerns::Initializable` for `CountryIps`
+- Added `Deduplication`
 
 ### v0.0.3 [2012-01-20]
 
-- Added Concerns::Initializable
+- Added `Concerns::Initializable`
 
 ### v0.0.2 [2012-01-19]
 
@@ -90,7 +90,7 @@ SecurityGuard::Deduplication.new(
 
 ### v0.0.1 [2012-01-18]
 
-- First release, implemented SecurityGuard::CountryIps and `bin/sguard`
+- First release, implemented `CountryIps` and `bin/sguard`
 
 ## Contributing
 
