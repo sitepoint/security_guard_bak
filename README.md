@@ -46,9 +46,10 @@ country_ips = SecurityGuard::CountryIps.new(
 Returns a list of the IPs from given country and IP dictionaries. Useful for auditing IPs from higher risk nations.
 
 ```ruby
-country_ips = SecurityGuard::CountryIps.new
-country_ips.countries = ['Australia', 'United Kingdom']
-country_ips.ips = ['4.4.4.4', '8.8.8.8', '203.206.0.1']
+country_ips = SecurityGuard::CountryIps.new(
+  :countries => ['Australia'],
+  :ips       => ['4.4.4.4', '8.8.8.8', '203.206.0.1']
+)
 country_ips.result # => ['203.206.0.1']
 ```
 
@@ -59,7 +60,23 @@ country_ips.countries_from_file = '/path/to/the/file'
 country_ips.ips_from_file = '/path/to/the/file'
 ```
 
+### Deduplication
+
+Deduplicates content contained within a list of files. Useful for deduplicating email newsletter subscription lists.
+
+```ruby
+dedupe = SecurityGuard::Deduplication.new(
+  :input_folder  => '/path/to/the/input/folder',
+  :output_folder => '/path/to/the/output/folder'
+).process
+```
+
 ## Changelog
+
+### v0.0.4 [2012-02-08]
+
+- Fixed Concerns::Initializable for CountryIps
+- Added Deduplication
 
 ### v0.0.3 [2012-01-20]
 
