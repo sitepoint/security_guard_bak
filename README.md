@@ -65,7 +65,7 @@ country_ips.ips_from_file = '/path/to/the/file'
 Deduplicates content contained within a list of files. Useful for deduplicating email newsletter subscription lists.
 
 ```ruby
-dedupe = SecurityGuard::Deduplication.new(
+SecurityGuard::Deduplication.new(
   :input_folder  => '/path/to/the/input/folder',
   :output_folder => '/path/to/the/output/folder'
 ).process
