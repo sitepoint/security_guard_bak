@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe SecurityGuard::CountryIps do
-  let(:country_ips) do
+  let :country_ips do
     SecurityGuard::CountryIps.new(
       :countries => ['Australia'],
       :ips       => ['4.4.4.4', '8.8.8.8', '203.206.0.1']

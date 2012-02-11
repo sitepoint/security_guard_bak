@@ -1,14 +1,14 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe SecurityGuard::Deduplication do
-  let(:dedupe) do
+  let :dedupe do
     SecurityGuard::Deduplication.new(
       :input_folder  => fixture_file('dedupe_lists/'),
       :output_folder => fixture_file('../tmp/')
     )
   end
 
-  let(:source_data) do
+  let :source_data do
     [
       ['a@example.com', 'b@example.com', 'c@example.com', 'c@example.com'],
       ['b@example.com', 'd@example.com'],
