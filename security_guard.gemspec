@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'clamp'
   gem.add_dependency 'awesome_print'
   gem.add_dependency 'geoip'
+  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'simplecov'
   gem.add_development_dependency 'minitest-colorize'
 end
