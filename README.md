@@ -4,6 +4,12 @@ This gem is a collection of useful tools for auditing data and performing securi
 
 ## Installation
 
+### Standalone
+
+    $ gem install security_guard
+
+### As part of your application
+
 Add this line to your application's Gemfile:
 
     gem 'security_guard'
@@ -11,10 +17,6 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install security_guard
 
 ## Usage
 
