@@ -3,11 +3,12 @@ module SecurityGuard
     include Concerns::Initializable
 
     initializable :input_folder, :output_folder
-    attr_accessor :source_data, :deduped_data
+    attr_accessor :source_data, :deduped_data, :filenames
 
     def initialize(args = nil)
       @source_data  ||= []
       @deduped_data ||= []
+      @filenames    ||= []
       initializable_attrs args
     end
 
@@ -25,13 +26,14 @@ module SecurityGuard
       raise Exception.new('Input folder is invalid or is empty.') if files.empty?
 
       files.each do |file|
+        filenames   << File.basename(file)
         source_data << File.readlines(file).map{ |line| line.downcase.strip }
       end
     end
 
     def write_data_to(folder)
       deduped_data.each_with_index do |array, index|
-        File.open("#{folder}/#{index+1}.txt", 'w') do |f|
+        File.open("#{folder}/#{filenames[index]}", 'w') do |f|
           f.puts array
         end
       end

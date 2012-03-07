@@ -25,23 +25,29 @@ describe SecurityGuard::Deduplication do
     dedupe.source_data.must_equal source_data
   end
 
+  it 'records filenames' do
+    dedupe.send :read_data_from, fixture_file('dedupe_lists/')
+    dedupe.send(:filenames).must_equal ['a.txt', 'b.txt', 'c.txt']
+  end
+
   it 'writes data to the output folder' do
+    dedupe.send :filenames=, ['a.txt', 'b.txt']
     dedupe.deduped_data = [
       [1, 2, 3],
       [4, 5, 6],
     ]
     dedupe.send :write_data_to, fixture_file('../tmp/')
 
-    File.read(fixture_file('../tmp/1.txt')).must_equal "1\n2\n3\n"
-    File.read(fixture_file('../tmp/2.txt')).must_equal "4\n5\n6\n"
+    File.read(fixture_file('../tmp/a.txt')).must_equal "1\n2\n3\n"
+    File.read(fixture_file('../tmp/b.txt')).must_equal "4\n5\n6\n"
   end
 
   it 'reads input and writes output' do
     dedupe.process
 
-    File.read(fixture_file('../tmp/1.txt')).must_equal "a@example.com\nb@example.com\nc@example.com\n"
-    File.read(fixture_file('../tmp/2.txt')).must_equal "d@example.com\n"
-    File.read(fixture_file('../tmp/3.txt')).must_equal "e@example.com\n"
+    File.read(fixture_file('../tmp/a.txt')).must_equal "a@example.com\nb@example.com\nc@example.com\n"
+    File.read(fixture_file('../tmp/b.txt')).must_equal "d@example.com\n"
+    File.read(fixture_file('../tmp/c.txt')).must_equal "e@example.com\n"
   end
 
   it 'dedupes an array with another array' do

@@ -75,6 +75,10 @@ SecurityGuard::Deduplication.new(
 
 ## Changelog
 
+### v0.0.6 [2012-03-07]
+
+- Output file names are now automatically mapped from the input file names
+
 ### v0.0.5 [2012-03-07]
 
 - Fixed the file ordering issue on some OSes like Linux
