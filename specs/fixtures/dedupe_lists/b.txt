@@ -1,2 +1,0 @@
-b@example.com
-d@example.com
