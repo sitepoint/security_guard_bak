@@ -75,6 +75,11 @@ SecurityGuard::Deduplication.new(
 
 ## Changelog
 
+### v0.0.5 [2012-03-07]
+
+- Fixed the file ordering issue on some OSes like Linux
+- Fixed the non-existing `specs/tmp` directory that causes specs to fail
+
 ### v0.0.4 [2012-02-08]
 
 - Fixed `Concerns::Initializable` for `CountryIps`
