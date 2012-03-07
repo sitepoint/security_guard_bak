@@ -20,7 +20,7 @@ module SecurityGuard
     private
 
     def read_data_from(folder)
-      files = Dir["#{folder}/*"]
+      files = Dir["#{folder}/*"].sort
 
       raise Exception.new('Input folder is invalid or is empty.') if files.empty?
 
